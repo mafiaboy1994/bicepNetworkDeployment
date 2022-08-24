@@ -43,7 +43,7 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
 
 module virtualNetwork './vnet.bicep' =[for vnet in virtualNetworks: {
-  scope: resourceGroup
+  scope: resourceGroup 
   name: '${vnet.name}-${companyName}-${env}-${locationShortName}-dp'
   params: {
     addressPrefixes: vnet.addressPrefixes
