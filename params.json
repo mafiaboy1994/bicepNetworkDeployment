@@ -1,0 +1,59 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "locationList": {
+            "value": {
+                "uksouth": "uks",
+                "ukwest": "ukw"
+            }
+        },
+        "dnsServers": {
+            "value": [
+                "8.8.8.8",
+                "9.9.9.9"
+            ]
+        },
+        "virtualNetworks":{
+            "value": [
+                {
+                "name": "vnet1",
+                "addressPrefixes":[
+                    "172.16.0.0/20"
+                ],
+                "subnets":
+                    [
+                        {
+                            "name": "frontend",
+                            "subnetPrefix": "172.16.2.0/24"
+                        },
+                        {
+                            "name": "backend",
+                            "subnetPrefix": "172.16.3.0/24"
+                        }
+                    ]
+                },
+                {
+                "name": "vnet2",
+                "addressPrefixes":[
+                    "172.17.0.0/20"
+                ],
+                "subnets": [
+                        {
+                            "name": "frontend",
+                            "subnetPrefix": "172.17.2.0/24"
+                        },
+                        {
+                            "name": "backend",
+                            "subnetPrefix": "172.17.3.0/24"
+                        }
+                    ]
+                
+                }
+            ] 
+        }        
+    }
+  }
+
+
+
